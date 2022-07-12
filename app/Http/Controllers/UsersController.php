@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Http\Requests\UserRequest;
 
 /**
  * 用户控制器处理
@@ -16,5 +17,22 @@ class UsersController extends Controller
     public function show(User $user)
     {
         return view('users.show', compact('user'));
+    }
+
+    /**
+     * 显示编辑页面
+     */
+    public function edit(User $user)
+    {
+        return view('users.edit', compact('user'));
+    }
+
+    /**
+     * 处理表单提交
+     */
+    public function update(UserRequest $request, User $user)
+    {
+        $user->update($request->all());
+        return redirect()->route('users.show', $user->id)->with('success', '个人资料更新成功！');
     }
 }
