@@ -20586,3 +20586,35 @@ body {
 .row {
   margin-bottom: 20px;
 }
+
+/* Topic Index Page */
+.topics-index-page .top-list .nav > li > a {
+  position: relative;
+  display: block;
+  padding: 5ps 14px;
+  font-size: 0.9em;
+}
+.topics-index-page .top-list a {
+  color: #444;
+}
+.topics-index-page .top-list .meta {
+  font-size: 0.9em;
+  color: #b3b3b3;
+}
+.topics-index-page .top-list .meta a {
+  color: #b3b3b3;
+}
+.topics-index-page .badge {
+  background-color: #d8d8d8;
+}
+.topics-index-page hr {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  border: 0;
+  border-top: 1px solid #dcebf5;
+}
+
+/* Add container and footer space */
+#app > div.container {
+  margin-bottom: 100px;
+}
