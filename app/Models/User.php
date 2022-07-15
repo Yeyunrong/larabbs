@@ -8,6 +8,9 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Auth\MustVerifyEmail as MustVerifyEmailTrait;
 
+/**
+ * 用户表
+ */
 class User extends Authenticatable implements MustVerifyEmailContract
 {
     use HasFactory, Notifiable, MustVerifyEmailTrait;
