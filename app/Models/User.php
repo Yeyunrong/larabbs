@@ -46,4 +46,13 @@ class User extends Authenticatable implements MustVerifyEmailContract
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * 用户和话题之间存在一对多关系，进行关联后
+     * 可以使用 $user->topics 获取指定用户的所有帖子
+     */
+    public function topics()
+    {
+        return $this->hasMany(Topic::class);
+    }
 }
