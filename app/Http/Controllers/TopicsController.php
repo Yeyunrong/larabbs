@@ -20,10 +20,12 @@ class TopicsController extends Controller
     /**
      * 分页查询
      */
-	public function index()
+	public function index(Request $request, Topic $topic)
 	{
-        //使用with 进行预加载
-		$topics = Topic::with('user', 'category')->paginate(30);
+        //使用with 进行预加载 规避N+1问题
+		$topics = $topic->withOrder($request->order)
+                    ->with('user', 'category')
+                    ->paginate(20);
 		return view('topics.index', compact('topics'));
 	}
 
